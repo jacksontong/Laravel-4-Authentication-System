@@ -30,4 +30,9 @@ Route::group(['before' => 'guest'], function()
 		'as' => 'account-create',
 		'uses' => 'AccountController@getCreate'
 	]);
+
+	Route::get('/account/activate/{code}', [
+		'as' => 'account-activate',
+		'uses' => 'AccountController@getActivate'
+	]);
 });

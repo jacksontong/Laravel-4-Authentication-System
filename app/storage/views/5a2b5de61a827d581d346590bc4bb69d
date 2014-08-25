@@ -1,19 +1,35 @@
 <?php $__env->startSection('content'); ?>
 	<form action="<?php echo URL::route('account-create-post'); ?>" method="post">
 		<div class="field">
-			Email: <input type="text" name="email">
+			Email: <input type="text" name="email" <?php echo (Input::old('email')) ? ' value="'. e(Input::old('email')) .'"' : ''; ?>>
+			<?php if($errors->has('email')): ?>
+				<?php echo $errors->first('email'); ?>
+
+			<?php endif; ?>
 		</div>
 
 		<div class="field">
-			Username: <input type="text" name="username">
+			Username: <input type="text" name="username"<?php echo (Input::old('username')) ? ' value="'. e(Input::old('username')) .'"' : ''; ?>>
+			<?php if($errors->has('username')): ?>
+				<?php echo $errors->first('username'); ?>
+
+			<?php endif; ?>
 		</div>
 
 		<div class="field">
 			Password: <input type="password" name="password">
+			<?php if($errors->has('password')): ?>
+				<?php echo $errors->first('password'); ?>
+
+			<?php endif; ?>
 		</div>
 
 		<div class="field">
 			Password again: <input type="password" name="password_again">
+			<?php if($errors->has('password_again')): ?>
+				<?php echo $errors->first('password_again'); ?>
+
+			<?php endif; ?>
 		</div>
 		<input type="submit" value="Create account">
 		<?php echo Form::token(); ?>
