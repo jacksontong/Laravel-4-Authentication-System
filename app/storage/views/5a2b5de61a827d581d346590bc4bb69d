@@ -1,0 +1,23 @@
+<?php $__env->startSection('content'); ?>
+	<form action="<?php echo URL::route('account-create-post'); ?>" method="post">
+		<div class="field">
+			Email: <input type="text" name="email">
+		</div>
+
+		<div class="field">
+			Username: <input type="text" name="username">
+		</div>
+
+		<div class="field">
+			Password: <input type="password" name="password">
+		</div>
+
+		<div class="field">
+			Password again: <input type="password" name="password_again">
+		</div>
+		<input type="submit" value="Create account">
+		<?php echo Form::token(); ?>
+
+	</form>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

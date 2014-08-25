@@ -1,0 +1,10 @@
+<nav>
+	<ul>
+		<li><a href="<?php echo URL::route('home'); ?>">Home</a></li>
+		<?php if(Auth::check()): ?>
+
+		<?php else: ?>
+			<li><a href="<?php echo URL::route('account-create'); ?>">Create an account</a></li>
+		<?php endif; ?>
+	</ul>
+</nav>
