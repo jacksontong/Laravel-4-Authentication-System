@@ -1,0 +1,31 @@
+<?php $__env->startSection('content'); ?>
+	<form action="<?php echo URL::route('account-change-password-post'); ?>" method="post">
+		<div class="field">
+			Old password: <input type="password" name="old_password">
+			<?php if($errors->has('old_password')): ?>
+				<?php echo $errors->first('old_password'); ?>
+
+			<?php endif; ?>
+		</div>
+
+		<div class="field">
+			New password: <input type="password" name="password">
+			<?php if($errors->has('password')): ?>
+				<?php echo $errors->first('password'); ?>
+
+			<?php endif; ?>
+		</div>
+
+		<div class="field">
+			New password again: <input type="password" name="password_again">
+			<?php if($errors->has('password_again')): ?>
+				<?php echo $errors->first('password_again'); ?>
+
+			<?php endif; ?>
+		</div>
+		<input type="submit" value="Change password">
+		<?php echo Form::token(); ?>
+
+	</form>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

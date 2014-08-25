@@ -1,0 +1,15 @@
+<?php $__env->startSection('content'); ?>
+	<form action="<?php echo URL::route('account-forgot-password-post'); ?>" method="post">
+		<div class="field">
+			Email: <input type="text" name="email"<?php echo ( Input::old('email')) ? 'value="'. e(Input::old('email')) .'"' : ''; ?>>
+			<?php if($errors->has('email')): ?>
+				<?php echo $errors->first('email'); ?>
+
+			<?php endif; ?>
+		</div>
+		<input type="submit" value="Recover">
+		<?php echo Form::token(); ?>
+
+	</form>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

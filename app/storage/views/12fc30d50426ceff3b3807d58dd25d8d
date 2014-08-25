@@ -1,8 +1,5 @@
 <?php $__env->startSection('content'); ?>
-	<?php if(Auth::check()): ?>
-		<p>Hello, <?php echo Auth::user()->username; ?></p>
-	<?php else: ?>
-		<p>You are not signed in.</p>
-	<?php endif; ?>
+	<p><?php echo $user->username; ?></p>
+	<p><?php echo $user->email; ?></p>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

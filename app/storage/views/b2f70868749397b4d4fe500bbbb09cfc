@@ -2,9 +2,12 @@
 	<ul>
 		<li><a href="<?php echo URL::route('home'); ?>">Home</a></li>
 		<?php if(Auth::check()): ?>
-
+			<li><a href="<?php echo URL::route('account-sign-out'); ?>">Sign out</a></li>
+			<li><a href="<?php echo URL::route('account-change-password'); ?>">Change password</a></li>
 		<?php else: ?>
+			<li><a href="<?php echo URL::route('account-sign-in'); ?>">Sign in</a></li>
 			<li><a href="<?php echo URL::route('account-create'); ?>">Create an account</a></li>
+			<li><a href="<?php echo URL::route('account-forgot-password'); ?>">Forgot password</a></li>
 		<?php endif; ?>
 	</ul>
 </nav>
